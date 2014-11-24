@@ -9,7 +9,7 @@ require_relative "models/comment"
 Cuba.plugin(Cuba::Render)
 Cuba.use Rack::Session::Cookie, secret: "foobar"
 
-Ohm.redis = Redic.new("redis://127.0.0.1:6379")
+Ohm.redis = Redic.new(ENV["REDIS_URL"])
 
 Cuba.define do
   @page = {}
